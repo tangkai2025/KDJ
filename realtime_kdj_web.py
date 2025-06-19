@@ -133,7 +133,7 @@ if st.button("开始实时分析"):
     st.markdown(show_df.to_markdown(index=False), unsafe_allow_html=True)
 
     # 导出按钮
-csv = df_result[['name', 'code', 'index', 'J级别']].to_csv(index=False, encoding='utf-8-sig')
+    csv = df_result[['name', 'code', 'index', 'J级别']].to_csv(index=False, encoding='utf-8-sig')
 st.download_button(
     label="下载筛选结果CSV",
     data=csv,
