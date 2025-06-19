@@ -1,6 +1,7 @@
-   streamlit
-   yfinance
-   pandas
-   matplotlib
-   lxml
-   tabulate
+streamlit
+yfinance
+pandas
+matplotlib
+lxml
+tabulate
+openpyxl
