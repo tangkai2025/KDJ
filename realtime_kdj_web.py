@@ -133,12 +133,14 @@ if st.button("开始实时分析"):
     st.markdown(show_df.to_markdown(index=False), unsafe_allow_html=True)
 
     # 导出按钮
+        # 导出按钮
     csv = df_result[['name', 'code', 'index', 'J级别']].to_csv(index=False, encoding='utf-8-sig')
-st.download_button(
-    label="下载筛选结果CSV",
-    data=csv,
-    file_name='kdj_j_below_0_result.csv',
-    mime='text/csv',
-)
+    st.download_button(
+        label="下载筛选结果CSV",
+        data=csv,
+        file_name='kdj_j_below_0_result.csv',
+        mime='text/csv',
+    )
+
 else:
     st.info("点击上方按钮开始实时分析。")
