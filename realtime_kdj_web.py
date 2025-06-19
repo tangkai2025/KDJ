@@ -133,14 +133,16 @@ if st.button("开始实时分析"):
     st.markdown(show_df.to_markdown(index=False), unsafe_allow_html=True)
 
     # 导出按钮
-        # 导出按钮
-    csv = df_result[['name', 'code', 'index', 'J级别']].to_csv(index=False, encoding='utf-8-sig')
+    import io
+
+    output = io.BytesIO()
+    df_result[['name', 'code', 'index', 'J级别']].to_excel(output, index=False, encoding='utf-8')
     st.download_button(
-        label="下载筛选结果CSV",
-        data=csv,
-        file_name='kdj_j_below_0_result.csv',
-        mime='text/csv',
-    )
+        label="下载筛选结果Excel",
+        data=output.getvalue(),
+        file_name='kdj_j_below_0_result.xlsx',
+        mime='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+)
 
 else:
     st.info("点击上方按钮开始实时分析。")
