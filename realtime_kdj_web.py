@@ -136,7 +136,7 @@ if st.button("开始实时分析"):
     import io
 
     output = io.BytesIO()
-    df_result[['name', 'code', 'index', 'J级别']].to_excel(output, index=False, encoding='utf-8')
+    df_result[['name', 'code', 'index', 'J级别']].to_excel(output, index=False)
     st.download_button(
         label="下载筛选结果Excel",
         data=output.getvalue(),
